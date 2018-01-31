@@ -1,36 +1,7 @@
 describe("TestHopfieldFramework",function(){
-    /** 
-    var A = [[1, 2],
-         [3, 4]];
-
-    var B = [[5, 6],
-         [7, 8]];
-         
-    var C = [[6,  8],
-         [10, 12]];        
-    
-    var expectedM = AddMatrix(A,B);
-
-    console.log(expectedM);
-    console.log(C);
-    **/
-
-    it("Add two matrix", function(){  
-        var A = [[1, 2],
-                [3, 4]];
-
-        var B = [[5, 6],
-                [7, 8]];
-        
-        var C = [[6,  8],
-                [10, 12]];        
-   
-        var expectedM = AddMatrix(A,B);
-       
-        expect(expectedM).toEqual(C);
-    });
-
-
+    // *****************************************************************
+    // Set Matrix diagonal to zero
+    // *****************************************************************
     it("Set matrix diagonal to zero", function(){  
         var A = [[ 1,  2,  3,  4,  5],
                  [ 6,  7,  8,  9, 10],
@@ -49,6 +20,43 @@ describe("TestHopfieldFramework",function(){
         expect(resultM).toEqual(expectedM);
     });
 
+    // *****************************************************************
+    // Add two matrix
+    // *****************************************************************
+    it("Add two matrix", function(){  
+        var A = [[1, 2],
+                [3, 4]];
+
+        var B = [[5, 6],
+                [7, 8]];
+        
+        var C = [[6,  8],
+                [10, 12]];        
+   
+        var expectedM = AddMatrix(A,B);
+       
+        expect(expectedM).toEqual(C);
+    });
+
+    // *****************************************************************
+    // Multiply two matrix
+    // *****************************************************************
+    it("Multiply two matrix", function(){
+        var A = [[1, 2, 3],
+                 [4, 5, 6]];
+
+        var B = [[1, 2],
+                 [3, 4],
+                 [5, 6]];
+
+        var expectedM = [[22, 28],
+                         [49, 64]];
+
+        var resultM = MultiplyMatrix(A,B);
+
+        expect(resultM).toEqual(expectedM);
+
+    });  
 
     // *****************************************************************
     // Generate a matrix by multiplying a column vector by a row vector
@@ -104,7 +112,6 @@ describe("TestHopfieldFramework",function(){
 
     });
     
-
     // *****************************
     // SCALAR PRODUCT
     // *****************************
@@ -119,5 +126,16 @@ describe("TestHopfieldFramework",function(){
         expect(resultV).toEqual(expectedV);
     });
 
+     // *****************************
+    // Clone vector
+    // *****************************
+    it("Clone the vector", function(){
+        var V = [1, 2, 3];
+        var expectedV = [1, 2, 3];
 
+        resultV = CloneVector(V);
+
+        expect(resultV).toEqual(expectedV);
+        expect(resultV).not.toBe(expectedV);
+    });   
   });

@@ -150,8 +150,6 @@ function MultiplyMatrixByColumnVector(matrix, columnVector){
     throw new NullException("The column vector is null");
   }
 
-
-
   result = [];
 
   rowQuantity = matrix.length;
