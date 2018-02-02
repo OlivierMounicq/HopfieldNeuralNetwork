@@ -14,7 +14,7 @@
 //GetRandomInt
 //CloneVector
 
-function GenerateConfigRowVector2(configurationMatrix){
+function GenerateConfigRowVector(configurationMatrix){
   configRowVector = [];
 
   rowQuantity = configurationMatrix.length;
